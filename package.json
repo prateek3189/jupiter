@@ -1,0 +1,38 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-build": "watchify -t -o build/app.js -v -d src/js/app.jsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babelify": "^8.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^14.5.0",
+    "nodemon": "^1.12.7",
+    "require": "^2.4.20",
+    "watchify": "^3.9.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  }
+}

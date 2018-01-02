@@ -1,0 +1,16 @@
+*.DS_Store
+*.sublime-workspace
+*.sublime-project
+*.log
+.idea
+*.iml
+.vscode
+.haste-cache/
+node_modules*
+build
+coverage
+output
+integration/features/support/config/local.yml
+integration/.config/
+integration/.yardoc/
+integration/doc/
