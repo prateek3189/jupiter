@@ -13,6 +13,9 @@ npm Install<br/>
 <br/>
 // install http-server<br/>
 npm install http-server -g<br/>
+
+// to generate Css<br/>
+npm run build-less<br/>
 <br/>
 <br/>
 // to run the server <br/>
