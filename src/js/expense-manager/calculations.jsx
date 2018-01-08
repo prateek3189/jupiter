@@ -36,6 +36,10 @@ class Calculations extends React.Component {
         }, getState(props));
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState(getState(nextProps));
+    }
+
     render() {
         return (
             <div>
