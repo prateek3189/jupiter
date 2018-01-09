@@ -44,7 +44,7 @@ class ExpenseManger extends React.Component {
     }
 
     _getRow(index) {
-        const expenses = this.state.expenses;
+        const { expenses } = this.state;
         const description = expenses && expenses[index] ? expenses[index].description : '';
         const amount = expenses && expenses[index] ? expenses[index].amount: '';
         return (<tr key={index}>
@@ -64,7 +64,7 @@ class ExpenseManger extends React.Component {
     }
 
     _getRows() {
-        let expenses = this.state.expenses;
+        const { expenses } = this.state;
         let rowHtml = [];
 
         if(expenses && expenses.length){
@@ -79,7 +79,7 @@ class ExpenseManger extends React.Component {
     }
 
     _onChangePeople(index, event) {
-        let expenses = this.state.expenses
+        const { expenses } = this.state;
 
         if(expenses[index]) {
             Object.assign(expenses[index], {
@@ -93,7 +93,7 @@ class ExpenseManger extends React.Component {
     }
 
     _onInputDescriptionChange(index, event) {
-        let expenses = this.state.expenses
+        const { expenses } = this.state;
 
         if(expenses[index]) {
             Object.assign(expenses[index], {
@@ -107,7 +107,7 @@ class ExpenseManger extends React.Component {
     }
 
     _onInputAmountChange(index, event) {
-        let expenses = this.state.expenses
+        const { expenses } = this.state;
 
         if(expenses[index]) {
             Object.assign(expenses[index], {
@@ -121,7 +121,7 @@ class ExpenseManger extends React.Component {
     }
 
     _onClickAddRow(index, event) {
-        let expenses = this.state.expenses;
+        const { expenses } = this.state;
             expenses.push({
                 people: null,
                 description: '',
@@ -131,14 +131,14 @@ class ExpenseManger extends React.Component {
     }
 
     _onClickRemoveRow(index, event) {
-        let expenses = this.state.expenses;
+        const { expenses } = this.state;
         expenses.splice(index, 1);
         this.setState({calculate: false, expenses});
     }
 
     _isDisableCalculateButton() {
         let isDisabled = false;
-        const expenses = this.state.expenses;
+        const { expenses } = this.state;
         if(expenses.length) {
             let flag = 0;
             expenses.forEach(expense => {
@@ -159,12 +159,12 @@ class ExpenseManger extends React.Component {
     }
 
     _onCalculateClick() {
-        const expenses = this.state.expenses;
+        const { expenses } = this.state;
         this.setState({calculate: true, expenses});
     }
 
     _getPeopleList(index) {
-        const peopleList = this.state.peopleList;
+        const { peopleList } = this.state;
         const selectedPeople = this.state.expenses && this.state.expenses[index] && this.state.expenses[index].people;
         let peopleListSelectHtml = [];
 

@@ -25,8 +25,7 @@ class People extends React.Component {
     }
 
     render() {
-        const peopleAdded = this.state.peopleAdded;
-        const people = this.state.people;
+        const { peopleAdded, people } = this.state;
         return (
             <div>
                 <div>
@@ -79,7 +78,7 @@ class People extends React.Component {
     }
 
     _onInputPeopleChange(field, event) {
-        let peopleArr = this.state.peopleList;
+        const { peopleArr } = this.state;
         peopleArr[field] = event.target.value;
 
         const peopleEntered = peopleArr.length === parseInt(this.state.peopleCount, 10);
@@ -112,7 +111,7 @@ class People extends React.Component {
     _onClickCancelPeople() {
         this.setState({
             peopleList: [],
-            peopleSubmitted: false, 
+            peopleSubmitted: false,
             peopleEntered: false,
             peopleCount: 0,
             peopleAdded: false
@@ -121,7 +120,7 @@ class People extends React.Component {
 
     _onClickSubmitPeople() {
         // Remove unneccessary entry
-        var peopleList = this.state.peopleList;
+        var { peopleList } = this.state;
         var filteredPeopleList = [];
         peopleList.forEach(people => {
             if(filteredPeopleList.indexOf(people) === -1) {

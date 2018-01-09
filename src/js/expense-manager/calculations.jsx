@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function getState(props) {
-    const expenses = props.expenses;
-    const peopleList = props.peopleList;
+    const { expenses, peopleList } = props;
 
     let newExpenses = [];
 
@@ -69,8 +68,7 @@ class Calculations extends React.Component {
     }
 
     getCalculations() {
-        const newExpenses = this.state.newExpenses;
-        const peopleList = this.state.peopleList;
+        const { newExpenses, peopleList } = this.state;
         let rowDataHtml = [];
 
         peopleList.forEach(user => {
