@@ -89,7 +89,7 @@ class ExpenseManger extends React.Component {
             expenses.push({people: event.target.value});
         }
 
-        this.setState({calculate: false, xpenses});
+        this.setState({calculate: false, expenses});
     }
 
     _onInputDescriptionChange(index, event) {

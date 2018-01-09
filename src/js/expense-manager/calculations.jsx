@@ -21,7 +21,7 @@ function getState(props) {
 
     return {
         totalAmount: total,
-        avgAmount: Math.round(total/Object.keys(newExpenses).length),
+        avgAmount: (total/peopleList.length).toFixed(2),
         newExpenses,
         expenses
     }
@@ -70,11 +70,12 @@ class Calculations extends React.Component {
 
     getCalculations() {
         const newExpenses = this.state.newExpenses;
+        const peopleList = this.state.peopleList;
         let rowDataHtml = [];
 
-        for(const user in newExpenses) {
+        peopleList.forEach(user => {
             let description = '';
-            const userExpenses = (this.state.avgAmount - newExpenses[user]);
+            const userExpenses = (this.state.avgAmount - (newExpenses[user] || 0));
 
             description = userExpenses <= 0 ? 'Will Get': 'Owe';
             rowDataHtml.push(<tr>
@@ -82,7 +83,7 @@ class Calculations extends React.Component {
                     <td>{description}</td>
                     <td>{userExpenses < 0 ? (0-userExpenses) : userExpenses}</td>
                 </tr>);
-        }
+        });
 
         return rowDataHtml;
     }
