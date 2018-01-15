@@ -78,12 +78,12 @@ class People extends React.Component {
     }
 
     _onInputPeopleChange(field, event) {
-        const { peopleArr } = this.state;
-        peopleArr[field] = event.target.value;
+        const { peopleList } = this.state;
+        peopleList[field] = event.target.value;
 
-        const peopleEntered = peopleArr.length === parseInt(this.state.peopleCount, 10);
+        const peopleEntered = peopleList.length === parseInt(this.state.peopleCount, 10);
         this.setState({
-            peopleList: peopleArr,
+            peopleList,
             peopleEntered
         });
     }
